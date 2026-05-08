@@ -1,0 +1,230 @@
+
+/* GreenSprout Community Garden Website
+   Author: Student
+   Purpose: Shared responsive styling for final website project
+*/
+
+:root {
+    --green-dark: #1b5e20;
+    --green: #2e7d32;
+    --green-light: #e8f5e9;
+    --tan: #f7f1e1;
+    --text: #263238;
+    --white: #ffffff;
+    --accent: #f9a825;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #fafafa;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+main {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.hero {
+    background: linear-gradient(120deg, rgba(27, 94, 32, .9), rgba(46, 125, 50, .75)), url("assets/community-garden.svg");
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 5rem 2rem;
+    border-radius: 18px;
+    margin-top: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    margin: 0 0 1rem;
+}
+
+.button {
+    display: inline-block;
+    background: var(--accent);
+    color: #1f1f1f;
+    padding: .75rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: brightness(.95);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid #dfe7df;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+.card h2,
+.card h3 {
+    color: var(--green-dark);
+    margin-top: 0;
+}
+
+.feature-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    background: var(--green-light);
+    border-radius: 16px;
+    border: 1px solid #dfe7df;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    margin: 1.5rem 0;
+}
+
+th, td {
+    border: 1px solid #cfd8dc;
+    padding: .8rem;
+    text-align: left;
+}
+
+th {
+    background: var(--green);
+    color: var(--white);
+}
+
+tr:nth-child(even) {
+    background: var(--green-light);
+}
+
+form {
+    background: var(--white);
+    border: 1px solid #dfe7df;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: .75rem;
+    border: 1px solid #b0bec5;
+    border-radius: 10px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+.media {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border: 0;
+    border-radius: 16px;
+}
+
+footer {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 1.5rem 5%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--accent);
+}
+
+@media (max-width: 800px) {
+    nav {
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 3rem 1.25rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
